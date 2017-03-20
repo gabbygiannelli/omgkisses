@@ -1,0 +1,47 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- TemplateBeginEditable name="Title" -->
+  <title></title>
+  <!-- TemplateEndEditable -->
+  <!-- TemplateBeginEditable name="Keywords" -->
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <!-- TemplateEndEditable -->
+  <meta name="viewport" content="width=device-width">
+  <!-- Styles -->
+  <link href="font/Vidaloka-Regular.ttf" rel="stylesheet" type="text/css">
+	<link href="font/Canter Light.woff" rel="stylesheet" type="text/css">
+	<link href="font/Canter Bold.woff" rel="stylesheet" type="text/css">
+	<link href="font/CaneletterScript_PersonalUse.woff" rel="stylesheet" type="text/css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Fav and touch icons -->
+  <link rel="shortcut icon" href="favicon.ico">
+  <!-- TemplateBeginEditable name="TopScript" -->  
+  <!-- TemplateEndEditable -->
+</head>
+<!-- TemplateBeginEditable name="Body" -->
+<body id="">
+<!-- TemplateEndEditable -->
+<noscript><p class="noscript">&bull; <strong>PLEASE NOTE:</strong> Javascript support not detected. Some website features may not be available. For best results, please use a web browser that supports javascript. &bull;</p></noscript>
+<!-- #include File="common/top_menus.asp" -->
+<!--<a class="anchor" name="content"></a>-->
+<!-- TemplateBeginEditable name="MainBody" -->
+<!--Content-->
+  
+<!-- TemplateEndEditable -->
+<!-- #include File="common/footer_menus.asp" -->
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+    <script src="js/main.js"></script>
+<!-- TemplateBeginEditable name="BottomScript" -->
+<!-- TemplateEndEditable -->
+</body>
+</html>

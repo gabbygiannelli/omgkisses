@@ -1,0 +1,291 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Canter Light", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, "sans-serif"; 
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+p, li {
+  color: #191919;
+}
+
+/* COLORS */
+black {
+  color: #191919;
+}
+
+blue {
+  color: #b2dede;
+}
+
+pink {
+  color: #fecccc;
+}
+
+purple {
+  color: #e1e2e7;
+}
+
+tan {
+  color: #d3ba99;
+}
+
+mint {
+  color: #eaf0ee;
+}
+
+/* LINKS */
+a {
+  color: #b2dede;
+}
+
+a:hover {
+  color: #d3ba99;
+}
+
+/* TOP NAV */
+.bg-faded {
+    background-color: #e1e2e7;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #191919;
+}
+
+/* FOOTER */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 60px; /* Vertically center the text there */
+  background-color: #e1e2e7;
+}
+
+.footer .container-fluid {
+  height: 60px;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer .nav.social {
+  float: right;
+}
+
+.footer .nav > li {
+  padding: 0  15px;
+}
+
+.footer .nav.social > li {
+  padding: 18px 5px 0 5px;
+  line-height: 40px;
+}
+
+.footer .nav > li > a {
+  color: #191919;
+}
+
+.footer .nav > li > a:hover {
+  color: rgba(0,0,0,.7);
+  text-decoration: none;
+}
+
+/* HOME PAGE */
+#home .header {
+  background: no-repeat;
+  background-image: url(../img/header.png);
+  height: 450px;
+  background-size: cover;
+  background-position-x: 50%;
+  background-position-y: 89%;
+  margin-bottom: 50px;
+}
+
+/* SIGNUP */
+#signup .form-signup {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#signup .form-signup .row {
+  padding-bottom: 10px;
+}
+
+#signup .form-signup .form-signup-heading {
+  margin-bottom: 10px;
+}
+
+#signup .form-signup .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#signup .form-signup .form-control:focus {
+  z-index: 2;
+}
+
+#signup .btn-primary {
+    color: #191919;
+    background-color: #fecccc;
+    border-color: #fecccc;
+}
+
+/* LOGIN */
+#login .form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#login .form-signin .form-signin-heading,
+#login .form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+#login .form-signin .checkbox {
+  font-weight: normal;
+}
+
+#login .form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#login .form-signin .form-control:focus {
+  z-index: 2;
+}
+
+#login .form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+#login .form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+#login .btn-primary {
+    color: #191919;
+    background-color: #fecccc;
+    border-color: #fecccc;
+}
+
+/* PROFILE */
+#profile .form-profile {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#profile .form-profile .row {
+  padding-bottom: 10px;
+}
+
+#profile .form-profile .form-profile-heading {
+  margin-bottom: 10px;
+}
+
+#profile .form-profile .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#profile .form-profile .form-control:focus {
+  z-index: 2;
+}
+
+#profile .btn-primary {
+    color: #191919;
+    background-color: #fecccc;
+    border-color: #fecccc;
+}
+
+/* CONTACT */
+#contact .form-contact {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+#contact .form-contact .row {
+  padding-bottom: 10px;
+}
+
+#contact .form-contact .form-contact-heading {
+  margin-bottom: 10px;
+}
+
+#contact .form-contact .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+
+#contact .form-contact .form-control:focus {
+  z-index: 2;
+}
+
+#contact .btn-primary {
+    color: #191919;
+    background-color: #fecccc;
+    border-color: #fecccc;
+}
+
+#contact .map {
+  background-image: url(../img/map.jpg);
+  height: 450px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* GALLERY */
+#gallery h1 {
+  text-align: center;
+}
+
+#gallery .album {
+  padding-top: 3rem;
+  padding-bottom: 1.9rem;
+  background-color: #eaf0ee;
+}
+
+#gallery .card {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
+
+#gallery .card > img {
+  margin-bottom: .75rem;
+}
+
+#gallery .card-text {
+  font-size: 85%;
+}
+

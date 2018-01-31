@@ -1,0 +1,295 @@
+'===============================================================================================================
+'Coded by Gabrielle Giannelli for NHHEAF
+'===============================================================================================================
+Const CarouselID = "carousel-college-counselors"
+Const ImagesPerSlide = 3
+
+'Assumption: Image name and description are the same (dashes will be stripped by the program in the description)
+'Arrray stores id, image file name, counselor name, degree and school content (caret seperated)
+Dim arrImages
+arrImages = Array("tori^tori-headshot.jpg^Tori^<span class=""degree"">Bachelor's of Science in Business Management</span><br><span class=""school"">Keene State College</span>",_
+"moira^moira-headshot.jpg^Moira^<span class=""degree"">Bachelor's of Science in Sociology</span><br><span class=""school"">Keene State College</span><br><span class=""hr""></span><span class=""degree"">Master of Divinity</span><br><span class=""school"">Andover Newton Theological School</span>",_
+"angela^angela-headshot.jpg^Angela^<span class=""degree"">Bachelor's of Arts in Women's Studies &amp; Communication</span><br><span class=""school"">University of New Hampshire</span><br><span class=""hr""></span><span class=""degree"">Master of Social Work</span><br><span class=""school"">Rutgers University</span>",_
+"val^valerie-headshot.jpg^Val^<span class=""degree"">Bachelor's of Arts in Criminal Justice</span><br><span class=""school"">Stonehill College</span><br><span class=""hr""></span><span class=""degree"">Master of College Student Development &amp; Counseling</span><br><span class=""school"">Northeastern University</span>",_
+"karen^karen-headshot.jpg^Karen^<span class=""degree"">Bachelor's of Arts in English</span><br><span class=""school"">Union College</span>",_
+"ken^ken-headshot.jpg^Ken^<span class=""degree"">Bachelor's of Arts in French</span><br><span class=""school"">University of New Hampshire</span><br><span class=""hr""></span><span class=""degree"">Master of Education in School Counseling</span><br><span class=""school"">Plymouth State University</span>",_
+"cameron^cameron-headshot.jpg^Cameron^<span class=""degree"">Bachelor's of Arts in Psychology &amp; Criminal Justice</span><br><span class=""school"">Newbury College</span>",_
+"bear^nhheaf-bear-headshot.jpg^College Bear^<span class=""bear"">Hi, I’m the <em>NHHEAF College Bear</em>, the official mascot of The NHHEAF Network Organizations. I spend my time hanging out with the College Crew in the CCP Library brushing up on my college knowledge. The best part of my job is that I get to bring the message of college with me wherever I go.</span>",_
+"blank^blank-headshot.jpg^^")
+
+Sub RenderCarousel ()
+  Dim I, J, strClass, cntSlide, strHolder, arrHolder
+  cntSlide = 1
+  I = 0
+    
+  strClass = " class=""active" & chr(34)
+  Response.Write "<div id=" & chr(34) & CarouselID & chr(34) & " class=""carousel slide"" data-ride=""carousel"">" &vbcrlf
+  Response.Write "           <!-- Indicators -->" &vbcrlf
+  Response.Write "           <ol class=""carousel-indicators"">" &vbcrlf
+
+  Response.Write "              <li data-target=""#" & CarouselID & chr(34) & " data-slide-to=" & chr(34) & CStr(I) & chr(34) & strClass & "></li>" &vbcrlf
+  For I = 1 to UBound(arrImages)/ImagesPerSlide
+    Response.Write "              <li data-target=""#" & CarouselID & chr(34) & " data-slide-to=" & chr(34) & CStr(I) & chr(34) & "></li>" &vbcrlf
+  Next
+  Response.Write "           </ol>" &vbcrlf
+      
+  Response.Write "        <!-- Wrapper for slides -->" &vbcrlf
+  Response.Write "        <div class=""carousel-inner"" role=""listbox"">" &vbcrlf
+  For I = 0 to UBound(arrImages) Step ImagesPerSlide
+    Response.Write "          <!-- Slide " & CStr(cntSlide) & " -->" &vbcrlf
+	If I > 0 then strHolder = "" else strHolder = " active"
+    Response.Write "          <div class=""item" & strHolder & chr(34) & ">" &vbcrlf 'Remove active from subsequent renders
+    Response.Write "              <div class=""row"">" &vbcrlf
+      For J = 0 to ImagesPerSlide - 1
+	    arrHolder = Split(arrImages(I+J),"^")
+        Response.Write "                  <div class=""col-xs-12 col-sm-4 college-counselor"" style=""width: 390px;"" id="& chr(34) & arrHolder(0) & chr(34) &">" &vbcrlf
+        Response.Write "                      <figure class=""college-counselor-img"">" &vbcrlf
+        Response.Write "                          <img src=""img/headshots/" & arrHolder(1) & chr(34) & " alt=""Headshot of " & arrHolder(2) & chr(34) & " />" &vbcrlf
+        Response.Write "                          <figcaption class=""college-counselor-imgcaption"">" &vbcrlf
+        Response.Write "                              <h2> " & arrHolder(2) & " </h2>" &vbcrlf
+        Response.Write "                          </figcaption>" &vbcrlf
+        Response.Write "                      </figure>" &vbcrlf
+        Response.Write "                      <div class=""college-counselor-content"">" &vbcrlf
+        Response.Write "                          <p class=""text-center""> " & arrHolder (3) & " </p>" &vbcrlf
+        Response.Write "                      </div>" &vbcrlf        
+        Response.Write "                  </div>" &vbcrlf
+	  Next
+    Response.Write "              </div>" &vbcrlf
+    Response.Write "          </div>" &vbcrlf
+	cntSlide = cntSlide + 1
+  Next
+  Response.Write "      </div>" &vbcrlf
+  Response.Write "      <!-- Controls -->" &vbcrlf
+  Response.Write "      <a class=""left carousel-control"" role=""button"" href=""#" & CarouselID & chr(34) & " data-slide=""prev""><span class=""glyphicon glyphicon-chevron-left""></span><span class=""sr-only"">Previous</span><span class=""sr-only"">Previous</span></a>" &vbcrlf
+  Response.Write "      <a class=""right carousel-control"" role=""button"" href=""#" & CarouselID & chr(34) & " data-slide=""next""><span class=""glyphicon glyphicon-chevron-right""></span><span class=""sr-only"">Next</span><span class=""sr-only"">Next</span></a>" &vbcrlf
+  Response.Write "    </div>" &vbcrlf
+End sub
+%>
+
+<section id="banner">
+  <div class="container-fluid">
+    <div class="row">          
+      <div class="col-xs-12 banner">          
+        <!-- bootstrap carousel; with paypal accessibility plugin -->
+        <div id="Carousel1" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-target="#Carousel1" data-slide-to="0" class="active"></li>
+            <li data-target="#Carousel1" data-slide-to="1"></li>
+            <li data-target="#Carousel1" data-slide-to="2"></li>
+            <li data-target="#Carousel1" data-slide-to="3"></li>            
+            <li data-target="#Carousel1" data-slide-to="4"></li>
+            <li data-target="#Carousel1" data-slide-to="5"></li>
+            <li data-target="#Carousel1" data-slide-to="6"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <a href="<% =Application("NHHEAFNetwork_domain") %>" title="NHHEAF Network Website" target="_blank"><img src="img/banner-images/hp-logo-banner.jpg" class="img-responsive" alt="The NHHEAF Network Organizations. NH College Club. I Am College Bound. College Equals Opportunity. Destination College. Center for College Planning."></a>
+            </div>
+            
+            <div class="item">
+	                  <a href="financial-aid.asp" title="Financial Aid Page" target="_self"><img src="img/banner-images/hp-File-your-Fafsa.jpg" class="img-responsive" alt="Need help filing your fafsa? Don't understand your financial aid award letters? Considering your funding options? Schedule an appointment today! collegeplanning@nhheaf.org 888.7.graduate,  x119"></a>
+	                </div> 
+	                
+	                <div class="item">
+	                  <a href="<% =Application("NHHEAFCares_domain") %>" title="Destination College Page" target="_blank"><img src="img/banner-images/NHHEAF-Cares-Home-Banner.jpg" class="img-responsive" alt="Destination College; College: The passport to your future; 18th annual college convention for hs juniors and parents; Saturday March 18, 2017"></a>
+	                </div>
+	                
+	                <div class="item">
+	                  <a href="summer-boot-camp.asp" title="Boot Camp Page" target="_self"><img src="img/banner-images/Boot-Camp-Home-Banner.jpg" class="img-responsive" alt="Summer Boot Camp for rising high school seniors."></a>
+	                </div>        
+	                
+	                <div class="item">
+	                  <a href="ceo.asp" title="College Equals Opportunity Page" target="_self"><img src="img/banner-images/CEO-Home-Banner.jpg" class="img-responsive" alt="CEO; College Equals Opportunity; The NHHEAF Network Organizations; $345,000 in College Scholarships Awarded Since 2005"></a>
+	                </div>
+	                
+	                <div class="item">
+	                  <a href="pdfs/CCP-E-Flyer.pdf" title="CCP E-Flyers PDF" target="_blank"><img src="img/banner-images/College-Counselors-Banner.jpg" class="img-responsive" alt="College Counselors"></a>
+	                </div>
+	                
+	                <div class="item">
+	                  <a href="dc.asp" title="Destination College Page" target="_blank"><img src="img/banner-images/DC2018-Banner.jpg" class="img-responsive" alt="Destination College 2018"></a>
+	                </div>
+	                
+	                <div class="item">
+	                  <a href="college-bound.asp" title="I Am College Bound Month Page" target="_blank"><img src="img/banner-images/IACB-Month-hp-Banner.jpg" class="img-responsive" alt="I Am College Bound Month"></a>
+	                </div>
+	              </div>           
+	            
+	              <!-- Left and right controls -->
+	              <a class="left carousel-control" href="#Carousel1" role="button" data-slide="prev">
+	                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	                <span class="sr-only">Previous</span>
+	              </a>
+	              <a class="right carousel-control" href="#Carousel1" role="button" data-slide="next">
+	                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	                <span class="sr-only">Next</span>
+	              </a>
+	            </div>
+	            <!-- end bootstrap carousel -->        
+	          </div>         
+	        </div>
+	      </div>
+	    </section>
+	    
+	    <!-- Service -->
+	    <section id="service">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-sm-4 service-area">
+	            <!-- Start single service -->
+	            <div class="service-single">
+	              <div class="white-bg black">
+	                <h1>Students &amp; Parents</h1>
+	                <p>Applying to college involves so much more than just sending in an application. Learn how to strategically choose colleges to apply to, what the application components entail and the ways families are paying for college.</p>
+	                <a href="students-parents.asp" title="Students and Parents Landing Page" class="navy-bg navy-dropcap btn-main">Learn More</a>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="col-sm-4 service-area">
+	            <!-- Start single service -->
+	            <div class="service-single middle"> 
+	              <div class="white-bg black">     
+	                <h1>Educators</h1>
+	                <p>The Center for College Planning provides access to supplemental, downloadable curriculum you can deliver to students, opportunities for you to receive some professional development, and so much more.</p>
+	                <a href="educators.asp" title="Educators Landing Page" class="navy-bg navy-dropcap btn-main">Learn More</a>
+	              </div>
+	            </div>
+	          </div>
+	          <div class="col-sm-4 service-area">
+	            <!-- Start single service -->
+	            <div class="service-single">
+	              <div class="white-bg black">
+	                <h1>Events &amp; Initiatives</h1>
+	                <p>While there are many wonderful, year-round resources offered by the Center for College Planning, there are some larger events and initiatives offered yearly. Destination College, CEO, and College Application Week are just a few offered for NH students and families.</p>
+	                <a href="events.asp" title="Events Landing Page" class="navy-bg navy-dropcap btn-main">Learn More</a>
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+	    
+	    <!-- CCP Resources -->
+	    <section id="resources">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-xs-12 resources-area">
+	            <!-- Start Title -->
+	            <div class="title">
+	              <h1>CCP Resources</h1>
+	              <hr class="forest-green-bg small-hr">
+	            </div>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon navy-bg navy-dropcap"> 
+	            <a href="order.asp" title="Order Publications Page" target="_self"> 
+	              <span class="fa fa-file white"></span> 
+	            </a> 
+	          </div>
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>Order Publications</h2>
+	            <p>Order free College Planning Publications for Elementary/Middle and High School students.</p>
+	          </div>
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon forest-green-bg forest-green-dropcap">
+	            <a href="get-financially-fit.asp" title="Get Financially Fit Page" target="_self">
+	              <span class="fa fa-money white"></span>
+	            </a>
+	          </div>
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>Get Financially Fit</h2>
+	            <p>Watch our series of &ldquo;Financially Fit in Fifteen&rdquo; videos featuring personal finance management expert Rich discussing a wide variety of financial literacy topics</p>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon blue-green-bg blue-green-dropcap">
+	            <a href="calculators.asp" title="College Calculators Page" target="_self">
+	              <span class="fa fa-calculator white"></span>
+	            </a>
+	          </div>
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>College Calculators</h2>
+	            <p>How much will college cost you? These calculators are available to assist you in planning and funding higher education.</p>
+	            <br>
+	          </div>
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon light-green-bg light-green-dropcap">
+	            <a href="https://www.youtube.com/user/NHHEAF " title="NHHEAF Youtube Channel" target="_blank">
+	              <span class="fa fa-video-camera white"></span>
+	            </a>
+	          </div>
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>NHHEAF Youtube Channel</h2>
+	            <p>Not able to attend a NHHEAF presentation live? Not a problem! You can still receive all of the great information about college planning, financial aid, and paying for college. Tune in for some expert advice from our College Counselors.</p>
+	          </div>
+	        </div>
+	        <div class="row">
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon lime-green-bg lime-green-dropcap">
+	            <a href="scholarships.asp" title="Scholarships Page" target="_self">
+	              <span class="fa fa-graduation-cap white"></span>
+	            </a>
+	          </div>    
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>Local Scholarships</h2>
+	            <p>Take a look at some of the great resources available to help you find these local opportunities</p>
+	          </div>
+	          <div class="col-xs-3 col-sm-4 ccp-resources-icon navy-bg navy-dropcap">
+	            <a href="http://www.campustours.com/" title="Virtual Campus Tours" target="_blank">
+	              <span class="fa fa-university white"></span>
+	            </a>
+	          </div>
+	          <div class="ccp-resources-description col-xs-10 col-sm-4 col-lg-5">
+	            <h2>Virtual Campus Tours</h2>
+	            <p>Can't make it to every campus tour? Check out these virtual tours.</p>
+	          </div>
+	        </div> <!-- /End row -->  
+	      </div> <!-- /End container -->
+	    </section>
+	    
+	    <!--Event Calendar-->
+	    <section id="calendar">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-xs-12">
+	            <h1>Event Calendar</h1>
+	            <hr class="blue-green-bg small-hr">
+	            <div class="text-center">
+	              <iframe src="" name="NHHEAF Calendar of Events" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+	            </div> 
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+	    
+	    <!-- College Counselors -->
+	    <section id="college-counselors">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-xs-12 college-counselors-area">
+	            <!-- Start Title -->
+	            <div class="title">
+	              <a class="anchor" id="counselors-anchor"></a>
+	              <h1>Meet the College Counselors</h1>          
+	              <hr class="light-green-bg small-hr">
+	            </div>
+	            <!-- End Title -->
+	            
+	            <!-- Start Carousel -->
+	            <% RenderCarousel %>
+	            <!-- End Carousel -->
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+	    
+	    <!--Twitter Feed-->
+	    <section id="twitter" class="text-center">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-xs-12">
+	            <i class="fa fa-twitter fa-4x black margin-20"></i>
+	            <span class="sr-only">Twitter Bird Icon</span>
+	          </div>
+    </div>

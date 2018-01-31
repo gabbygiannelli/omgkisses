@@ -1,0 +1,100 @@
+<section id="info">
+    <div class="container">
+      <div class="row">   
+               
+        <!-- information -->
+        <div class="col-sm-12 col-lg-6 pull-right info">         
+          <p><strong>Call Us</strong><br><span class="phone">800.330.0787</span></p>
+          <p><strong>Hours of Operation (EST)</strong><br>
+          <span class="hours">
+            Mon-Fri: 7:00am - Midnight<br>
+            Sat: 7:00am - 11:00pm<br>
+            Sun: 8:00am - 9:00pm
+          </span></p>
+          <p><strong>Mailing Address (Head Office)</strong><br>
+          <span class="address">
+          Beacon Group<br>
+          PO Box 2035, Concord, NH 03302
+          </span></p>
+          <p><strong>Fax</strong><br><span class="fax">603.227.5487</span></p>
+          <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCR5NMrBkqQZzvXUR4botA4HohAceEem4I&q=4+Barrell+Court,Concord,NH,03301&attribution_source=Google+Maps+Embed+API" title="Google Map of Beacon Group Location" width="500" height="400" frameborder="0" style="border:0"></iframe>
+          <br><br><br>
+        </div>                   
+                
+        <!-- form -->
+        <div id="form" class="col-sm-12 col-md-6">          
+          <aside id="beacon-contact">
+            <!--<p class="text-center small"><strong>* - indicates a required field</strong></p>-->
+            <form class="form-horizontal" method="post" name="partners" action="formtarget.asp?form=beacon-contact" >
+              <div class="form-group">
+                <label for="firstName" class="col-sm-12">First Name *</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="firstName" name="FirstName" placeholder="Jane" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName" class="col-sm-12">Last Name *</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="lastName" name="LastName" placeholder="Doe" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="company" class="col-sm-12">Company Name *</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Company Name" required >
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="col-sm-12">Phone *</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="phone" name="Phone" placeholder="123-456-7890" required >
+                </div>
+              </div> 
+              <div class="form-group">
+                <label for="email" class="col-sm-12">Email *</label>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" id="email" name="Email" placeholder="jane.doe@example.com" required >
+                </div>
+              </div>  
+              <div class="form-group">
+                <label for="checkboxes" class="col-sm-12">What is the nature of your email?</label>
+                <br> 
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Sales
+                  </label>
+                </div>   
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Customer Service
+                  </label>
+                </div>  
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Employment Opportunities
+                  </label>
+                </div>     
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Other
+                  </label>
+                </div>  
+              </div> 
+              <div class="form-group">
+                <label for="comments" class="col-sm-12">Comments:</label>
+                <div class="col-sm-12">
+                    <textarea class="form-control" rows="4" id="comments" name="Comments" placeholder="Please enter your comments here" ></textarea>
+                </div>
+              </div>
+              <div id="captcha_container"><!-- section is replaced dynamically with captcha dialog box via javascript -->
+                <noscript><p class="noscript">&bull; <strong>PLEASE NOTE:</strong> Javascript support is required. Please enable or allow javascript in your browser and refresh the page. &bull;</p></noscript>
+                <p class="text-center">(This form requires a captcha; please refresh the page and try again)</p>
+              </div>
+              <button type="submit" class="btn btn-main submit">Submit <i class="fa fa-chevron-right yellow"></i></button>
+              <input type="hidden" name="formname" value="beacon-contact" />
+            </form>  
+          </aside>          
+        </div>
+      </div>
+    </div>
+  </section>

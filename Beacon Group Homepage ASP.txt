@@ -1,0 +1,88 @@
+    <!-- Home page banner-->
+    <section id="banner">
+      <div class="container banner-overlay">
+        <div class="row top">
+          <div class="col-xs-9 col-lg-5">
+            <h1>Offering recovery solutions which serve your customers like you do.</h1>
+            <p><strong>Beacon Group leverages the management team of its parent company and its 50 years of experience in asset recovery and remains on the cutting edge of security and compliance.</strong></p>
+            <br>
+            <a href="contact.asp" title="Contact Page" target="_self" role="button" class="btn btn-main">Contact Us <i class="fa fa-angle-right blue"></i></a>
+            <a id="arrow-hint" href="#services" class="activate"></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Message Section-->
+    <section id="message">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-offset-2 col-md-8 text-center">
+            <h2>Exceptional customer care for you and your debtor.</h2>
+            <p>Beacon Group provides debt recovery services with great attention to customer care and service to craft solutions that lead to successful asset recovery.</p>
+            <br><br><br><br><br><br>
+            <a class="btn btn-main" href="collection_services.asp" target="_self" title="Start A Low Risk Pilot Project">Learn More</a>
+            <br>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Services-->
+    <section id="services">
+      <div class="container">
+        <div class="row">
+
+          <!--Section 1-->
+          <div class="col-xs-4 service section1 hidden-xs">
+            <div class="img">
+              <img src="img/student-loans-hp.jpg" alt="Student Loan Image" class="img-responsive center-block" />
+            </div>
+            <h3>Student Loans</h3>
+          </div>
+
+          <!--Section 2-->
+          <div class="col-xs-4 service section2 hidden-xs">
+             <div class="img">
+               <img src="img/financial-hp.jpg" alt="Financial Image" class="img-responsive center-block" />
+             </div>
+             <h3>Financial</h3>
+          </div>
+
+          <!--Section 3-->
+          <div class="col-xs-4 service section3 hidden-xs">
+             <div class="img">
+               <img src="img/healthcare-hp.jpg" alt="Healthcare Image" class="img-responsive center-block" />
+             </div>
+             <h3>Healthcare</h3>
+          </div>
+
+          <div class="col-xs-12 text-center">
+            <p>From student loans to healthcare, our experience allows us to conduct asset recovery in a respectful way using a results-driven approach.</p>
+            <br>
+            <a class="btn btn-main" href="industries.asp" target="_self" title="Industries Page">See All Industries</a>
+          </div>
+
+        </div><!-- /end Row -->
+      </div>
+    </section>
+    
+<script type="text/javascript">
+  function r() {
+        var e = (parseInt(document.documentElement.clientWidth), parseInt(document.documentElement.clientHeight));
+        e > 960 ? $("#arrow-hint").removeClass("activate") : $("#arrow-hint").addClass("activate")
+    }
+
+    $(window).on("scroll", function() {
+        $("#arrow-hint").addClass("deactivate"), setTimeout(function() {
+            $("#arrow-hint").removeClass("deactivate"), $("#arrow-hint").removeClass("activate")
+        }, 500)
+    })
+
+    function show(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function hide(id) {
+      document.getElementById(id).style.display = "none";
+    }
+</script>

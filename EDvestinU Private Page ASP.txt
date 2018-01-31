@@ -1,0 +1,129 @@
+<section id="banner">
+  <div class="container-fluid">
+    <div class="row margin-30">
+      <div class="col-sm-12 banner">
+        <img src="img/private-banner.png" class="img-responsive" alt="Private Loan Banner"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="page-title" class="large-white-arrow-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-1 col-sm-7 calc-text">
+        <% =RenderBranding() %>
+        <h2>APRs range from 3.576%&ndash;9.570%<sup>1</sup> with Autopay<sup>2</sup></h2>
+        <p>As a nonprofit higher education lender based in New Hampshire, the EDvestinU<sup>&reg;</sup> Private Student Loan Program offers competitive, low&ndash;cost fixed and variable rate loan options to applicants nationwide.</p>
+        <p>Below are more important loan details. If you have any questions about the application process or need help choosing the best loan program for you, please feel free to <a href="contact.asp" title="Contact Us" target="_blank">contact us</a>.</p>
+        <p>Want to get an idea of the rate you may qualify for before filling out an application? Check out EDvestinU’s one&ndash;of&ndash;a&ndash;kind Student Loan Payment Calculator. This custom calculator helps you estimate your private student loan rate, monthly payment amount, and total cost of loan.</p>
+        <a href="calc_alternative.asp" target="_blank" title="Student Loan Payment Calculator"><p><strong>Start Now &gt;</strong></p></a>
+      </div>
+      <div class="col-sm-3 calc-img">
+        <br>
+        <img src="img/Private_iphone.png" class="img-responsive center-img" alt="Alternative Rate Estimator Image"/>
+      </div>
+    </div>
+    <div class="row margin-20 programs">
+      <div class="col-sm-6 under-grad-box">
+        <h2 class="text-center medium-white-arrow-box">Undergraduate &amp; Graduate</h2>
+        <hr>
+        <br>
+        <p>Once approved, U.S. citizens or permanent resident students will have the option to choose the private education loan program that best suits them; a fixed or variable interest rate.</p>
+        <br>
+        <div class="apply-btn text-center">
+          <a class="btn-main" href="repayment-plans-10.asp" title="Important Loan Details & Disclosures for the EDvestinU Private Student Loan" target="_blank">Important Disclosures</a><span class="small-break">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="btn-main" href="<% =sub_token("privatenational") %>" title="Apply for a Private Loan">Apply Now</a>
+        </div>
+        <br>
+      </div>
+      <div class="col-sm-6 international-box">
+        <h2 class="text-center medium-white-arrow-box">International Students</h2>
+        <hr>
+        <br>
+        <p>International students are eligible for the EDvestinU Private Student Loan Program with a creditworthy U.S. citizen or permanent resident cosigner.</p>
+        <br>
+        <div class="apply-btn text-center">
+          <a class="btn-main" href="repayment-plans-10.asp" title="Important Loan Details & Disclosures for the EDvestinU Private Student Loan" target="_blank">Important Disclosures</a><span class="small-break">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><a class="btn-main" href="<% =sub_token("privateinternat") %>" title="Apply for a Private Loan">Apply Now</a>
+        </div>
+        <br>
+      </div>
+      <div class="col-sm-12">
+        <p class="text-right"><a href="javascript:opendisclosures();" title="Loan Interest Rate and Fees PDF"><strong>Application and Solicitation Disclosure</strong></a></p>
+        <div class="footnotes">
+          <p><sup>1</sup> APR or &quot;annual percentage rate&quot; is a calculation of what the loan will cost, taking into consideration interest, fees and length of loan. Accordingly, the APR is subject to increase or decrease due to factors such as changes in the interest rate of variable rate loans, changes in principle due to the capitalization of interest or presence of a cosigner. Variable APR rates may increase or decrease depending on fluctuations in the London Interbank Offered Rate (LIBOR) index. Monthly interest rate accrual is based on the published One&ndash;Month London Interbank Offered Rate (&quot;LIBOR&quot;) as of the last business day of the previous month plus your applicable margin. <% =strLiborRate %> Lowest rate requires application with a cosigner and 0.50 percentage point interest rate reduction for Autopay benefit. The interest rate reduction for authorizing our servicer to automatically deduct monthly payments from a savings or checking account will not reduce the monthly payment, but will reduce the monthly finance charge, resulting in a lower total cost of loan. APR’s provided include a 0.50 percent interest rate reduction for authorizing our loan servicer to automatically deduct your payments each month from your bank account (Autopay). APR ranges may include interest rate incentives only available to applicants with a creditworthy cosigner.</p>
+          <p><sup>2</sup> Autopay Benefit: During Periods when payments are due, borrowers are eligible to receive a 0.50 percentage point interest rate reduction on their loan by authorizing our loan servicer to automatically deduct payments each month from the borrower’s bank account. The interest rate reduction for authorizing our servicer to automatically deduct monthly payments from a savings or checking account will not reduce the monthly payment, but will reduce the monthly finance charge, resulting in a lower total cost of loan.</p>
+        </div>
+      </div>           
+    </div>
+  </div>
+</section>  
+<section class="section features large-gray-arrow-box">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <h2>Why EDvestinU?</h2>
+      </div>
+      <div class="col-sm-6">  
+        <img src="img/icons/College-Icon.png" class="img-responsive" alt="Nonprofit Servicer Icon"/>
+        <div class="white-text-box">
+          <p><strong>Nonprofit Servicer</strong></p>
+          <p>Student loan servicing from a nationally recognized nonprofit provider with 24/7 online account access and expert loan counseling from application to final payment.</p>
+        </div>
+      </div>      
+      <div class="col-sm-6">  
+        <img src="img/icons/Loan-Counseling.png" class="img-responsive" alt="Stakeholders Icon"/>
+        <div class="white-text-box">
+          <p><strong>Stakeholders, Not Stockholders </strong></p> 
+          <p>Unlike the competition, EDvestinU Student Loan Programs focus on stakeholders &mdash; the hard&ndash;working parents and college&ndash;bound students.</p>
+        </div>
+      </div>
+      <div class="col-sm-6"> 
+        <img src="img/icons/Zero-Fees-Icon.png" class="img-responsive" alt="Community Icon"/>
+        <div class="white-text-box">
+          <p><strong>Community Support</strong></p>   
+          <p>Proceeds from the EDvestinU Loan Programs support scholarships and college access activities in 100% of N.H. public high schools.</p>
+        </div>
+      </div>      
+      <div class="col-sm-6"> 
+        <img src="img/icons/Cosigner-Icon.png" class="img-responsive" alt="Cosigner Release Icon"/>
+        <div class="white-text-box">
+          <p><strong>Cosigner Release<sup>3</sup></strong></p>
+          <p>The opportunity to remove a cosigner from your loan(s) after 24 months of consecutive and on&ndash;time payments</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section page-middle-blue text-center">
+ <div class="container">
+   <div class="row">
+     <div class="col-sm-6 consider-box">
+       <div class="small-white-arrow-box">
+         <h2>Reduce Your Total Cost </h2>
+         <br>
+         <p>The way you choose to repay your loan will impact the total amount you pay over time. Regardless of what repayment type you choose, even occasional interest payments made while in school will help to lower the total cost.</p>
+         <p><a href="repayment-plans-10.asp#types" target="_self" title=""><strong>Learn More &gt;</strong></a></p>
+       </div>
+     </div>
+     <div class="col-sm-6 questions-box">
+       <div class="small-white-arrow-box">
+         <h2>Questions?</h2>
+         <br>
+         <p>Check out our FAQ Section for answers to some commonly asked questions or call us at <strong>855.887.5430</strong>.</p>
+         <br>
+         <p><a href="faqs.asp" target="_self" title="Commonly Asked Questions"><strong>Learn More &gt;</strong></a></p>
+         <br>
+       </div>
+     </div>
+   </div>
+ </div>
+</section>
+<section class="end-section">
+ <div id="disclaimer" class="container">
+   <div class="row">
+     <div class="col-sm-12 footnotes">
+        <p><sup>3</sup> Cosigner release allowed if an account is in current standing, after 24 months of consecutive &amp; on&ndash;time payments with a borrower FICO >749 for EDvestinU Private Student Loans and minimum income requirement of $30,000 with no foreclosures, repossessions, wage garnishments, unpaid tax liens, unpaid judgments or other public records having an open balance exceeding $100 during the last 7 years. The borrower must not currently be involved in bankruptcy proceeding or had any bankruptcy filings during the past 10 years and cannot have any defaults on education loans.</p>                
+     </div>
+   </div>
+ </div>
+</section>

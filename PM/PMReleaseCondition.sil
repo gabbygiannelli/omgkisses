@@ -1,0 +1,6 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string type = issueType;
+
+if (type == "Sub-task") {
+	return false;
+}

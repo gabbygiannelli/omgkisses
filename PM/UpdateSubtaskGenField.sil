@@ -1,0 +1,6 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string issue = #{key};
+
+if (#{%issue%.customfield_12174} == "Yes") {
+    #{%issue%.customfield_12175} = "No";
+}

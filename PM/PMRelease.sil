@@ -1,0 +1,36 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string #{sk};
+string issue = #{key};
+string startDate = #{%issue%.customfield_12170};
+string releaseDate = #{%issue%.customfield_12171};
+string versionDescription = #{%issue%.customfield_12173};
+string versionName = #{%issue%.customfield_12172};
+string pKey = "PM";
+
+if(isNotNull(versionName)) {
+    if(isNull(fixVersions)) {
+        admAddProjectVersion(pKey, versionName, versionDescription, releaseDate);
+		
+		admSetProjectVersionStartDate(pKey, versionName, startDate);
+		
+		fixVersions = versionName;
+	}
+} else {
+	if(isNotNull(fixVersions)) {
+		fixVersions = fixVersions;
+		admSetProjectVersionReleaseDate(pKey, versionName, releaseDate);
+	}
+}
+
+if(isNotNull(parent)) {
+	return;
+}
+for (#{sk} in subtasks(#{key})) {
+	#{%sk%.fixVersions} = fixVersions;
+}
+
+if(isNotNull(versionName)) {
+    admReleaseProjectVersion(pKey, versionName, true);
+} else if(isNotNull(fixVersions)){
+    admReleaseProjectVersion(pKey, fixVersions, true);
+}

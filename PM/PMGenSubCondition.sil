@@ -1,0 +1,15 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string type = issueType;
+string issue = #{key};
+
+if (type == "Bug" || type == "Improvement" || type == "New Feature" || type == "Task") {
+    if (isNull(#{%issue%.customfield_12174})){
+    	return false;
+    } else if (#{%issue%.customfield_12174} == "No") {
+        return false;
+    }
+} else if (type == "Sub-task") {
+	return false;
+}
+
+return true;

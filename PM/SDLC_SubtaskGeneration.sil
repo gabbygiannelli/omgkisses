@@ -1,0 +1,58 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string #{createdIssue} = "";
+string issue = #{key};
+string [] #{custom_fields_mappings} = "";
+string projectName = #{%issue%.customfield_12176};
+string type = issueType;
+
+
+if (type == "Bug" || type == "Improvement" || type == "New Feature" || type == "Task") {
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Project Charter - " + projectName,#{priority},"Create Project Charter",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Design Specification Document - " + projectName,#{priority},"Create Design Specification Document",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Functional Specification Document - " + projectName,#{priority},"Create Functional Specification Document",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Privacy Impact Assessment - " + projectName,#{priority},"Create Privacy Impact Assessment",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Records Management Assessment Documents- " + projectName,#{priority},"Create Records Management Assessment Documents",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Report Specifications - " + projectName,#{priority},"Create Report Specifications",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Scope Changes if needed - " + projectName,#{priority},"Create Scope Changes if needed",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Security Evaluations - " + projectName,#{priority},"Create Security Evaluations",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Test Plans - " + projectName,#{priority},"Create Test Plans",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Create Use Cases - " + projectName,#{priority},"Create Use Cases",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+    #{createdIssue} = createIssue("PM",#{key},"Sub-task","Validation of complete documentation - " + projectName,#{priority},"Validation of complete documentation",#{components},#{dueDate},#{estimate},#{securityLevel},#{custom_fields_mappings});
+    #{%createdIssue%.assignee} = #{assignee};
+    raiseEvent("Issue Assigned", #{createdIssue}, currentUser());
+    autotransition("In Progress", #{createdIssue});
+}
+
+#{%issue%.customfield_12175} = "Yes";
+
+autotransition("In Progress", #{key});

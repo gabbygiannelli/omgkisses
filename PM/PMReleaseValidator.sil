@@ -1,0 +1,28 @@
+//Start your programs with code comments, this way it will show here (max 3 lines)
+string issue = #{key};
+string versionName = #{%issue%.customfield_12172};
+string startDate = #{%issue%.customfield_12170};
+string releaseDate = #{%issue%.customfield_12171};
+
+
+if(isNotNull(versionName)) {
+    if(isNotNull(fixVersions)) {
+        return false, "You must select a Fix Version if the Version has been created or provide a Version Name so that the version can be created.";
+    }
+    if(isNull(startDate)) {
+        return false, "If you are selecting a fix version you do not need to select a start date. If you are providing a new version name please select a start date for that new version.";
+    }
+} else {
+    if(isNull(fixVersions)) {
+    return false, "You must select a Fix Version if the Version has been created or provide a Version Name so that the version can be created.";
+    }
+    if(isNotNull(startDate)) {
+        return false, "If you are selecting a fix version you do not need to select a start date. If you are providing a new version name please select a start date for that new version.";
+    }
+}
+
+if (isNull(releaseDate)) {
+	return false, "You must select a release date";
+} else if (releaseDate < startDate) {
+    	return false, "Your release date cannot be before the start date";
+}
